@@ -6,9 +6,20 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/font-awesome-4.7.0/css/font-awesome.min.css">
+
+
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+   
+
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -20,10 +31,43 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <div class="nav-left">
+        <span class="title">tweeter</span>
+      </div>
+      <div class="nav-right">
+        <span class="new-tweet"><strong>Write</strong> a New Tweet</span>
+        <div >
+        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+        </div>
+      </div>
     </nav>
+    <header class="profile-header">
+      <div class="profile-content">
+      <div class="profile-image">
+          <img id="profile-picture" src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class="profile-name">
+          <h2>Your Name</h2>
+      </div>
+    </div>
+  </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <form method="POST" action="/tweets/">
+          <!-- <label for="tweet-text">What are you humming about?</label> -->
+          <div class="tweet-box">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about ?"></textarea>
+          </div>
+          <div class="tweet-count">
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+    </main>
+    
   </body>
 </html>

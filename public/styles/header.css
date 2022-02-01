@@ -1,0 +1,35 @@
+
+.profile-header {
+display: flex;
+flex-direction: column;
+width: 100%;
+height: 400px;
+background-color: #eeecf4;
+justify-content: center;
+align-items: center;
+}
+
+.profile-content {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 100%;
+background-color: #c4ae56;
+background-image: url("https://www.transparenttextures.com/patterns/gray-floral.png");
+}
+
+.profile-image {
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin-top: 55px;
+}
+
+#profile-picture {
+height: 120 px;
+}
+
+.profile-name {
+  font-family: 'Arial';
+}
