@@ -5,12 +5,13 @@
 #tweet-text {
   align-items: center;
   flex-direction: row;
-  width: 100%;
-  padding : 15px;
+  width: 105%;
+  padding-top: 15px;
   background-color: #f4f1ec;
   border-color:transparent;
+  outline: none;
   border-bottom: 4px solid #425252;
-  height: 60px;
+  /* height: 60px; */
   font-family: 'Arial';
 }
 
@@ -37,5 +38,8 @@
   color:#425252;
 }
 
+
+
+ 
 
  
