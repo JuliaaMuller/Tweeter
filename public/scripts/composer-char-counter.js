@@ -1,6 +1,6 @@
-$(document).ready(function() {
+$(document).ready(() => {
 
-  $("#tweet-text").on("input",function(event) {
+  $("#tweet-text").on("input",(event) => {
     let $textInput = $(this);
     let $textLength = $textInput.val().length;
     let $counterSelected = $textInput.closest("form").find(".counter")
