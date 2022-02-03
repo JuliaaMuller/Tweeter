@@ -10,7 +10,7 @@ $(document).ready(() => {
     $counterSelected.text($counterValue);
 
     if ($counterValue < 0) {
-      $("#counter").css("color", "red");
+      $("#counter").css("color", "#da1f76");
     } else {
       $("#counter").css("color", "#425252");
     }
