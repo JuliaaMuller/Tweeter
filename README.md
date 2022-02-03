@@ -16,3 +16,14 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of my tweeter page large version"](https://github.com/JuliaaMuller/tweeter/blob/master/docs%20/tweet-page-large.png)
+!["Screenshot of my tweeter page medium version"](https://github.com/JuliaaMuller/tweeter/blob/master/docs%20/tweet-page-medium.png)
+!["Screenshot of my tweeter page small version"](https://github.com/JuliaaMuller/tweeter/blob/master/docs%20/tweet-page-small.png)
+!["Screenshot of a successful tweet update"](https://github.com/JuliaaMuller/tweeter/blob/master/docs%20/success-tweet-large.png)
+!["Screenshot of an error message because the tweet-box is empty"](https://github.com/JuliaaMuller/tweeter/blob/master/docs%20/error-null.png)
+!["Screenshot of an error message because the tweet is too long"](https://github.com/JuliaaMuller/tweeter/blob/master/docs%20/error-toolong.png)
+
+
