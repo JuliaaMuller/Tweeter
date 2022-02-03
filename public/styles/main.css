@@ -1,0 +1,164 @@
+/* first part : creating a new tweet */
+.new-tweet {
+  justify-content: space-between;
+}
+
+.alert {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ color: #da1f76;
+ border-color: #da1f76;
+
+}
+
+#tweet-text {
+  align-items: center;
+  flex-direction: row;
+  width: 98%;
+  padding-top: 15px;
+  background-color: #f4f1ec;
+  border-color:transparent;
+  outline: none;
+  border-bottom: 4px solid #425252;
+  /* height: 60px; */
+  font-family: 'Arial';
+}
+
+.tweet-count {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.tweet-button {
+  color:#FFFFFF;
+  background-color: #4056a1;
+  width: 110px;
+  height: 35px;
+  font-family: 'Bungee';
+  align-items: center;
+}
+
+.counter {
+  font-family: 'Bungee';
+  align-items: flex-end;
+  color:#425252;
+}
+
+/* second part : showing the old tweets */
+
+.old-tweet {
+  /* // */
+  }
+  
+  .article {
+    border: 3px solid;
+    border-color:#425252;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    z-index: 2;
+    background-color: transparent;
+    padding-top: 10px;
+    margin-top: 75px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Arial";
+  }
+  
+  .article:hover {
+    box-shadow: 8px 10px gray;
+  }
+  
+  article header {
+    display: flex;
+    margin: 0 20px 0 20px;
+  }
+  
+  .profile-picture-container{
+    flex-grow: 0;
+    position: relative;
+    height: 80px;
+    width: 80px;
+  }
+  
+  .profile-picture-container img {
+    position: absolute;
+    background-color: #f4f1ec;
+    border-color:transparent;
+    outline: none;
+    height: 80px;
+    width: 80px;
+    font-family: 'Arial';
+  }
+  
+  .profile-name {
+    flex-grow: 0;
+    font-family: "Arial";
+    font-size: 20px;
+  }
+  
+  .handle-name {
+  flex-grow: 1;
+  text-align: end;
+  color:rgb(152, 152, 152);
+  font-size: 20px;
+  }
+  
+  .tweet{
+    border-bottom: 3px solid #425252;
+    width: 98%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    word-wrap: break-word;
+  }
+  
+  .old-tweet-footer {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  }
+  
+  .date {
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  
+  .icones {
+    color: #4056a1;
+    padding-right: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  #flag-icon {
+    margin:10px;
+  }
+  
+  #flag-icon:hover {
+    color: goldenrod;
+  }
+  
+  #retweet-icon {
+    margin:10px;
+  }
+  #retweet-icon:hover {
+    color: goldenrod;
+  }
+  
+  #heart-icon {
+    margin:10px;
+  }
+  #heart-icon:hover {
+    color: goldenrod;
+  }
+  
+  
