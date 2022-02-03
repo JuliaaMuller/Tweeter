@@ -1,6 +1,7 @@
 /* first part : creating a new tweet */
 .new-tweet {
   justify-content: space-between;
+  /* width: 98%; */
 }
 
 .alert {
@@ -56,7 +57,7 @@
   .article {
     border: 3px solid;
     border-color:#425252;
-    width: 95%;
+    width: 98%;
     display: flex;
     flex-direction: column;
     position:relative;
@@ -64,8 +65,8 @@
     background-color: transparent;
     padding-top: 10px;
     margin-top: 75px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
     font-family: "Arial";
   }
   
@@ -95,10 +96,12 @@
     font-family: 'Arial';
   }
   
-  .profile-name {
+  .profile-name-old{
     flex-grow: 0;
     font-family: "Arial";
     font-size: 20px;
+    color: #545149;
+    margin-left: 10px;
   }
   
   .handle-name {
@@ -110,9 +113,9 @@
   
   .tweet{
     border-bottom: 3px solid #425252;
-    width: 98%;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 94%;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 0px;
     padding-bottom: 15px;
     font-size: 20px;

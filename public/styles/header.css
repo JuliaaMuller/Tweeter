@@ -5,7 +5,6 @@ justify-content: center;
 align-items: center;
 width: 100%;
 height: 450px;
-/* background-color: #eeecf4; */
 padding-top: 60px; 
 }
 
@@ -34,4 +33,6 @@ height: 120 px;
 
 .profile-name {
   font-family: 'Arial';
+  color: aliceblue;
+  margin-bottom: 20px;
 }

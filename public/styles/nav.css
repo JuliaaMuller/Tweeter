@@ -21,13 +21,14 @@ font-family: 'Bungee';
 .nav-right {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  font-size: 20px ;
 }
 
 .new-tweet {
 font-family: 'Arial';
 justify-content: center;
+padding-top: 10px;
 }
 
 
@@ -47,7 +48,7 @@ font-size: 33px;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1100px) {
   body {
     display: flex;
     flex-direction: row;

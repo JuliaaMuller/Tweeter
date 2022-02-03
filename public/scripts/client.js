@@ -50,7 +50,7 @@ const createTweetElement = (tweetData) => {
   <div class="profile-picture-container">
       <img alt="profile-picture" src="${profilePicture}"> 
   </div>
-      <h3 class="profile-name">${profileName}</h3>
+      <h4 class="profile-name-old">${profileName}</h4>
       <h3 class="handle-name">${profileHandle}</h3>
     </header>
     <p class="tweet">${escape(contentText)} </p>
