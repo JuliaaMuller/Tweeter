@@ -3,29 +3,39 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-const tweetData = [{
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-},
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
+
+const tweetData = [
+//   {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//       "handle": "@SirIsaac"
+//     },
+//   "content": {
+//       "text": "If I have seen further it is by standing on the shoulders of giants"
+//     },
+//   "created_at": 1461116232227
+// },
+//   {
+//     "user": {
+//       "name": "Descartes",
+//       "avatars": "https://i.imgur.com/nlhLi3I.png",
+//       "handle": "@rd" },
+//     "content": {
+//       "text": "Je pense , donc je suis"
+//     },
+//     "created_at": 1461113959088
+//   }
 ];
 
+// To avoid someone to XSS the page;
+const escape = (str) => {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
+// Function to create a tweet with the HTML format;
 const createTweetElement = (tweetData) => {
   const profileName = tweetData["user"]["name"];
   const profileHandle = tweetData["user"]["handle"];
@@ -43,7 +53,7 @@ const createTweetElement = (tweetData) => {
       <h3 class="profile-name">${profileName}</h3>
       <h3 class="handle-name">${profileHandle}</h3>
     </header>
-    <p class="tweet">${contentText} </p>
+    <p class="tweet">${escape(contentText)} </p>
   <footer class="old-tweet-footer">
     <p class="date">${dateUpToNow}</p>
     <div class="icones">
@@ -55,33 +65,76 @@ const createTweetElement = (tweetData) => {
 </div>
 </article>
 `;
-return articleTweet;
+  return articleTweet;
 };
 
+// Function that calls createTweetElement for each tweet in db;
 const renderTweets = (tweets) => {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  for (let tweet of tweets)
-  {
-    const $newTweet = createTweetElement(tweet)
+  tweets.reverse();
+  for (let tweet of tweets) {
+    const $newTweet = createTweetElement(tweet);
     $('.old-tweet').append($newTweet);
   }
 };
 
-$(document).ready(() => { 
+// Function to render all tweet registered in db;
+const loadTweets = () => {
   $.ajax({
-    url:"/tweets/",
-    method: 'POST',
+    url:"/tweets",
+    type: "GET",
+    dataType : "JSON",
   })
-  .done((results) => {
-    //getting the result; 
-    console.log(results)
-  })
-  .fail((error) => {
-console.log(`Error: ${errormessage}`);
-  })
-  .always(() => console.log("request to tweeter done"));
-renderTweets(tweetData)
+    .then((data) => {
+      renderTweets(data);
+    });
+};
+
+// Function to check if tweetText from the tweet-box is too long;
+const tweetTooLong = (tweetText) => {
+  if (tweetText.length > 140) {
+    return true;
+  }
+};
+
+// Function to check if tweetText from the tweet-box is null;
+const tweetIsNull = (tweetText) => {
+  if (tweetText.length === 0) {
+    return true;
+  }
+};
+
+// Function for a post request to post a new tweet;
+const postTweet = ()=>{
+  form = $('.new-tweet').find('form');
+  $.ajax({
+    url: "/tweets/",
+    method:"POST",
+    data: form.serialize(),
+    success: () => {
+      $(".old-tweet").empty();
+      $("#tweet-text").val('');
+      $("#counter").val(140);
+      loadTweets();
+    }
   });
+};
+
+// Loads when document is ready;
+$(document).ready(() => {
+  loadTweets(tweetData); // Loads old tweets when the document is ready;
+  // Handle the submit action when posting a new tweet;
+  $('.new-tweet').on("submit",(event) => {
+    event.preventDefault();
+    textContent = $(".tweet-box").find("textarea").val();
+    if (tweetTooLong(textContent)) {
+      $(".alert").empty().append('<p><i class="fa fa-exclamation-triangle"></i> Your tweet is too long! Please respect the limit of 140 char <i class="fa fa-exclamation-triangle"></i></p>');
+      $(".alert").hide().fadeIn("slow");
+    } else if (tweetIsNull(textContent)) {
+      $(".alert").empty().append("<p><i class='fa fa-exclamation-triangle'></i> You don't have a tweet to submit! <i class='fa fa-exclamation-triangle'></i></p>");
+      $(".alert").hide().fadeIn("slow");
+    } else {
+      postTweet();
+    }
+  });
+});
 

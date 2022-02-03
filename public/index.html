@@ -11,8 +11,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles/font-awesome-4.7.0/css/font-awesome.min.css">
 
-
-
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
@@ -20,18 +18,15 @@
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
   
-   
-
-
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-  </head>
+    <script type="text/javascript" src="/scripts/client.js"></script>
 
+  </head>
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
@@ -56,23 +51,23 @@
       </div>
     </div>
   </header>
-
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
         <form method="POST" action="/tweets/">
+          <div class="alert"> </div>
           <!-- <label for="tweet-text">What are you humming about?</label> -->
           <div class="tweet-box">
             <textarea name="text" id="tweet-text" placeholder="What are you humming about ?"></textarea>
           </div>
           <div class="tweet-count">
             <button class="tweet-button" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+            <output name="counter" id="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
       <section class="old-tweet">
   </section>
 </main>   
-  </body>
+</body>
 </html>
