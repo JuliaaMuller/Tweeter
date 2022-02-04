@@ -47,18 +47,3 @@ font-size: 33px;
   }
 }
 
-/* Desktop layout version */
-@media only screen and (min-width: 1100px) {
-  body {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-  }
- .profile-header{
-    margin-top: 98px;
-    margin-left: 30px;
- } 
-  .container {
-    margin-top: 120px;
-  }
-}

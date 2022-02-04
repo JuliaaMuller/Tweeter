@@ -1,7 +1,6 @@
 /* first part : creating a new tweet */
 .new-tweet {
   justify-content: space-between;
-  /* width: 98%; */
 }
 
 .alert {
@@ -22,7 +21,6 @@
   border-color:transparent;
   outline: none;
   border-bottom: 4px solid #425252;
-  /* height: 60px; */
   font-family: 'Arial';
 }
 
@@ -50,10 +48,6 @@
 
 /* second part : showing the old tweets */
 
-.old-tweet {
-  /* // */
-  }
-  
   .article {
     border: 3px solid;
     border-color:#425252;
@@ -162,4 +156,18 @@
     color: goldenrod;
   }
   
-  
+  /* Desktop layout version */
+@media only screen and (min-width: 1100px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+  }
+ .profile-header{
+    margin-top: 98px;
+    margin-left: 30px;
+ } 
+  .container {
+    margin-top: 120px;
+  }
+}
